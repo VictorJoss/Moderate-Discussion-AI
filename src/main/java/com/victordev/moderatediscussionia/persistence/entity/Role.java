@@ -19,6 +19,9 @@ public class Role implements GrantedAuthority {
     @Enumerated(EnumType.STRING)
     private RoleEnum name;
 
+    @OneToMany(fetch = FetchType.EAGER, mappedBy = "role")
+    private List<Role_Permission> permissions;
+
     @Override
     public String getAuthority() {
         if(name == null){
