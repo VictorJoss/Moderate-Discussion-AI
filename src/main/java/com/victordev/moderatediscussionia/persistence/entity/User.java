@@ -27,6 +27,10 @@ public class User implements UserDetails {
     private boolean credentialsExpired;
     private boolean enabled;
 
+    @ManyToOne
+    @JoinColumn(name = "role_id")
+    private Role role;
+
     @OneToMany(mappedBy = "user")
     private List<Debate> debates;
 
