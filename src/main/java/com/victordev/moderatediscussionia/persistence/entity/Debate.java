@@ -19,7 +19,7 @@ public class Debate {
 
     @ManyToOne
     @JoinColumn(name = "user_id")
-    private User creator;
+    private User user;
 
     @OneToMany(mappedBy = "debate")
     private List<Comment> comments;

@@ -39,6 +39,9 @@ public class User implements UserDetails {
     @OneToMany(mappedBy = "user")
     private List<Vote> votes;
 
+    @OneToMany(mappedBy = "user")
+    private List<Comment> comments;
+
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
         if(this.role == null){

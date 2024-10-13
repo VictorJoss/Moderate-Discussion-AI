@@ -22,7 +22,7 @@ public class DebateServiceImpl implements IDebateService {
         Debate debate = new Debate();
         debate.setTopic(topic);
         debate.setDescription(description);
-        debate.setCreator(user);
+        debate.setUser(user);
         return debateRepository.save(debate);
     }
 }
